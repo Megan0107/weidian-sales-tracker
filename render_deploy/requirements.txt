@@ -1,22 +1,7 @@
-# 微店销量监控网站依赖
-
-# Flask Web框架
-Flask==3.0.0
-
-# 跨域支持
+flask==3.0.0
 flask-cors==4.0.0
-
-# HTTP请求
 requests==2.31.0
-
-# HTML解析
 beautifulsoup4==4.12.2
-
-# APScheduler定时任务
-APScheduler==3.10.4
-
-# 时区支持
+apscheduler==3.10.4
 pytz==2023.3
-
-# WSGI服务器
 gunicorn==21.2.0
