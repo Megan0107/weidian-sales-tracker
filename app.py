@@ -48,7 +48,7 @@ USE_MOCK_DATA = False
 def update_data():
     """
     更新数据的后台任务
-    每5分钟执行一次（降低频率提高稳定性）
+    每1分钟执行一次（降低频率提高稳定性）
     """
     global latest_data
     
@@ -315,14 +315,14 @@ def start_scheduler():
     # 每5分钟执行一次数据更新（降低频率提高稳定性）
     scheduler.add_job(
         func=update_data,
-        trigger=IntervalTrigger(minutes=5),
+        trigger=IntervalTrigger(minutes=1),
         id='update_sales_data',
         name='更新销量数据',
         replace_existing=True
     )
     
     scheduler.start()
-    print("[Scheduler] 定时任务已启动，每5分钟更新一次数据")
+    print("[Scheduler] 定时任务已启动，每1分钟更新一次数据")
     
     # 注册关闭钩子
     atexit.register(lambda: scheduler.shutdown())
